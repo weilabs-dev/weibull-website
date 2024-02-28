@@ -19,7 +19,7 @@ const FooterContent = () => {
     >
       <Typography sx={{ mr: 2 }}>
         {`© ${new Date().getFullYear()}`}
-        <Link target="_blank">Weibull</Link>
+        <Link target="_blank"> Weibull</Link>
       </Typography>
       {hidden ? null : (
         <Box

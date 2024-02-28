@@ -2,9 +2,8 @@
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
-import { Box, CardMedia } from "@mui/material";
+import { Box, CardHeader, CardMedia, Paper } from "@mui/material";
 import data from "src/data/content";
 
 const Home = () => {
@@ -24,7 +23,7 @@ const Home = () => {
           <br />
           En Weibull, convergen expertos en análisis de datos y desarrollo de
           sistemas, listos para transformar la información en soluciones
-          estratégicas.,
+          estratégicas.
         </Typography>
       </Grid>
       <Grid item sm={12}>
@@ -79,8 +78,10 @@ const Home = () => {
                 <CardMedia>
                   <img src="https://placehold.co/400x300" width={"100%"} />
                 </CardMedia>
-                <CardContent>
+                <CardHeader title={item.title}>
                   <Typography variant="h5">{item.title}:</Typography>
+                </CardHeader>
+                <CardContent>
                   <Typography variant="subtitle1">
                     {item.description}
                   </Typography>
@@ -99,39 +100,80 @@ const Home = () => {
             alignItems={"center"}
           >
             <Grid sm={12} md={6}>
-              <img src="https://placehold.co/400x400/000000/FFF" height={200} />
+              <img
+                src="https://placehold.co/500x200/000000/FFF"
+                height={200}
+                width={500}
+              />
             </Grid>
             <Grid sm={12} md={6}>
-              <Typography variant="h3">{data.process.title}</Typography>
+              <Typography variant="h3">Proceso</Typography>
               <Typography sx={{ fontSize: 18 }} mt={8}>
-                {data.process.content}
+                Nuestro proceso abarca desde la prospección hasta el
+                seguimiento, incluyendo el entendimiento del tema, el
+                preanálisis, la propuesta y ejecución de proyectos, así como la
+                entrega y seguimiento de resultados.
               </Typography>
             </Grid>
           </Grid>
         </Box>
       </Grid>
       <Grid sm={12}>
-        <Typography>{data.services.title}</Typography>
-        <Typography>{data.services.content.description}</Typography>
-        <Grid container>
+        <Typography variant="h2">Servicios</Typography>
+        <Typography fontSize={"1.2em"}>
+          Ofrecemos una gama de servicios:
+        </Typography>
+        <Grid container columns={{ xs: 1, sm: 2 }} mt={5}>
           {data.services.content.details.map((element) => (
-            <Typography>{element}</Typography>
+            <Paper
+              onHover={{
+                backgroundColor: "blue",
+              }}
+              square
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                paddingY: 10,
+                height: 200,
+                width: "45%",
+                margin: 1,
+              }}
+              elevation={4}
+              className="paper-like"
+            >
+              <Typography fontSize={18} fontWeight={200} align="center">
+                {element}
+              </Typography>
+            </Paper>
           ))}
         </Grid>
       </Grid>
       <Grid sm={12}>
-        <Typography>{data.benefits.title}</Typography>
-        <Typography>{data.benefits.content.description}</Typography>
+        <Typography variant="h2">Beneficios</Typography>
+        <Typography fontSize={"1.2em"}>
+          Al trabajar con Weibull, disfrutarás de:
+        </Typography>
         <Grid container>
           {data.benefits.content.details.map((element) => (
-            <Typography>{element}</Typography>
+            <Card
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: 200,
+                height: 180,
+                margin: 5,
+              }}
+            >
+              <CardContent>
+                <Typography fontSize={18} fontWeight={"600"} align="center">
+                  {element}
+                </Typography>
+              </CardContent>
+            </Card>
           ))}
         </Grid>
-      </Grid>
-      <Grid sm={12}>
-        <Typography>{data.contact.title}</Typography>
-        <Typography>{data.contact.content.email}</Typography>
-        <Typography>{data.contact.content.phone}</Typography>
       </Grid>
     </Grid>
   );
