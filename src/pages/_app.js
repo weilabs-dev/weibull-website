@@ -93,7 +93,7 @@ const App = (props) => {
             return (
               <ThemeComponent settings={settings}>
                 <WindowWrapper>
-                  {getLayout(<Component {...pageProps} />)}
+                  {getLayout(<Component {...pageProps}/>)}
                 </WindowWrapper>
                 <ReactHotToast>
                   <Toaster

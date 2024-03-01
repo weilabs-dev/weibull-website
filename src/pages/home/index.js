@@ -92,7 +92,7 @@ const Home = () => {
         </Grid>
       </Grid>
       <Grid item sm={12}>
-        <Box sx={{ backgroundColor: "#ddd", padding: 10, borderRadius: 2 }}>
+        <Box sx={{ backgroundColor: "#b29e84", padding: 10, borderRadius: 2 }}>
           <Grid
             container
             flexDirection={"row"}
@@ -107,8 +107,10 @@ const Home = () => {
               />
             </Grid>
             <Grid sm={12} md={6}>
-              <Typography variant="h3">Proceso</Typography>
-              <Typography sx={{ fontSize: 18 }} mt={8}>
+              <Typography variant="h3" color={"#000"}>
+                Proceso
+              </Typography>
+              <Typography color={"#000"} sx={{ fontSize: 18 }} mt={8}>
                 Nuestro proceso abarca desde la prospección hasta el
                 seguimiento, incluyendo el entendimiento del tema, el
                 preanálisis, la propuesta y ejecución de proyectos, así como la
@@ -126,9 +128,6 @@ const Home = () => {
         <Grid container columns={{ xs: 1, sm: 2 }} mt={5}>
           {data.services.content.details.map((element) => (
             <Paper
-              onHover={{
-                backgroundColor: "blue",
-              }}
               square
               sx={{
                 display: "flex",
